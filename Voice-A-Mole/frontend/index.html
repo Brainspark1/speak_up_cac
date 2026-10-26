@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whack-a-Word</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="banner" class="banner" role="alert" hidden></div>
+
+  <!-- ============ START SCREEN ============ -->
+  <section id="screen-start" class="screen">
+    <h1 class="logo">Whack-a-Word <span aria-hidden="true">🔨</span></h1>
+    <p class="tagline">Whack moles by <strong>saying</strong> who they are: “whack the cook!”, “hit the one with the parrot!”</p>
+
+    <div class="panel" id="health-panel">
+      <h2>Backend</h2>
+      <div id="phase" class="phase" aria-live="polite">Connecting…</div>
+      <dl class="health" id="health"></dl>
+    </div>
+
+    <div class="panel" id="mictest-panel">
+      <h2>Mic test</h2>
+      <p class="hint">Say something like “whack the pirate”. You'll see what was heard, which words GAMEBERT tagged, and the top-3 moles.</p>
+      <div id="mictest" class="mictest" aria-live="polite">
+        <div class="mt-row"><span class="mt-k">Heard</span><span id="mt-transcript" class="mt-v">…</span></div>
+        <div class="mt-row"><span class="mt-k">Tags</span><span id="mt-tags" class="mt-v"></span></div>
+        <div class="mt-row"><span class="mt-k">Top 3</span><span id="mt-top" class="mt-v"></span></div>
+        <div class="mt-row"><span class="mt-k">Latency</span><span id="mt-latency" class="mt-v"></span></div>
+      </div>
+      <form id="mt-form" class="typed-form">
+        <input id="mt-input" type="text" placeholder="…or type a phrase to test" autocomplete="off" aria-label="Test phrase">
+        <button type="submit">Test</button>
+      </form>
+    </div>
+
+    <div class="panel options">
+      <label><input type="checkbox" id="opt-typed"> Typed-input mode</label>
+      <label><input type="checkbox" id="opt-labels"> Name tags on moles</label>
+      <label><input type="checkbox" id="opt-captions" checked> Sound captions</label>
+      <label><input type="checkbox" id="opt-debug"> Debug overlay <kbd>D</kbd></label>
+      <label><input type="checkbox" id="opt-sound" checked> Sound</label>
+      <label>Start at level
+        <select id="opt-level"></select>
+      </label>
+    </div>
+
+    <button id="btn-start" class="big-btn" disabled>Loading…</button>
+  </section>
+
+  <!-- ============ GAME SCREEN ============ -->
+  <section id="screen-game" class="screen" hidden>
+    <header class="hud" aria-label="Game status">
+      <div class="hud-item"><span class="hud-k">Score</span><span id="hud-score" class="hud-v">0</span></div>
+      <div class="hud-item"><span class="hud-k">Lives</span><span id="hud-lives" class="hud-v" aria-label="lives"></span></div>
+      <div class="hud-item"><span class="hud-k">Combo</span><span id="hud-combo" class="hud-v">×1</span></div>
+      <div class="hud-item"><span class="hud-k">Level</span><span id="hud-level" class="hud-v">1</span></div>
+      <div class="hud-item"><span class="hud-k">Time</span><span id="hud-time" class="hud-v">60</span></div>
+    </header>
+    <div id="mission" class="mission" hidden aria-live="polite"></div>
+
+    <div class="board-wrap">
+      <div id="board" class="board"></div>
+      <div id="mud" class="mud" hidden aria-hidden="true"></div>
+      <div id="overlay-msg" class="overlay-msg" hidden aria-live="assertive"></div>
+    </div>
+
+    <div class="bubble" id="bubble" aria-live="polite">
+      <div class="bubble-heard"><span class="bubble-k">Heard:</span> <span id="bubble-text">Say a mole's name…</span></div>
+      <div class="bubble-result" id="bubble-result"></div>
+    </div>
+
+    <form id="typed-form" class="typed-form" hidden>
+      <input id="typed-input" type="text" placeholder="Type: whack the cook" autocomplete="off" aria-label="Typed command">
+      <button type="submit">Whack</button>
+    </form>
+
+    <div id="captions" class="captions" aria-live="polite"></div>
+    <button id="btn-quit" class="small-btn">Quit</button>
+  </section>
+
+  <!-- ============ SUMMARY SCREEN ============ -->
+  <section id="screen-summary" class="screen" hidden>
+    <h1 id="sum-title">Round over</h1>
+    <div class="panel"><dl id="sum-stats" class="stats"></dl></div>
+    <div class="panel">
+      <h2>Words that never matched</h2>
+      <p class="hint">Add these to mole descriptions in <code>game_config.json</code> if they should work.</p>
+      <div id="sum-words" class="chips"></div>
+    </div>
+    <div class="row">
+      <button id="btn-next" class="big-btn">Next level</button>
+      <button id="btn-retry" class="big-btn secondary">Retry</button>
+      <button id="btn-menu" class="big-btn secondary">Menu</button>
+    </div>
+  </section>
+
+  <aside id="debug" class="debug" hidden aria-label="Debug overlay"></aside>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

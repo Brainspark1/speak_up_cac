@@ -1,0 +1,10 @@
+voice-speak-up==1.0.1
+pyaudio
+fastapi
+uvicorn[standard]
+# tests
+pytest
+httpx
+# Optional, for --backend cuda: faster_whisper's CTranslate2 needs CUDA 12 libraries
+# nvidia-cublas-cu12
+# nvidia-cudnn-cu12==9.*

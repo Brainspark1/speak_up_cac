@@ -1,0 +1,189 @@
+{
+  "voice": {
+    "ner_model": "Saggarwal/GAMEBERT",
+    "ner_aggregation": "first",
+    "device_backend": "cpu",
+    "whisper_model_size": "tiny.en",
+    "initial_prompt": "Whack-a-mole. Whack the mole, hit the chef mole, smash the angry mole, knight, firefighter, fire fighter, fireman, defuse the bomb, no wait, not that one.",
+    "transcript_fixes": { "more": "mole", "mold": "mole", "mould": "mole", "mall": "mole", "moe": "mole", "moore": "mole",
+                          "night": "knight", "fireman": "firefighter",
+                          "mores": "moles", "molds": "moles", "malls": "moles" },
+    "transcript_fix_skip_after": ["one", "no", "any", "some", "much", "many", "once", "a", "little", "lot", "even"]
+  },
+
+  "thresholds": {
+    "MIN_SCORE": 0.20,
+    "AMBIGUITY_MARGIN": 0.08,
+    "FALLBACK_MIN_SCORE": 0.10,
+    "FALLBACK_MARGIN": 0.04,
+    "ACTION_MIN_SCORE": 0.20,
+    "DEFAULT_ACTION": "whack",
+    "CORRECTION_KEYWORDS": ["no", "nope", "wait", "stop", "cancel", "wrong", "oops", "undo", "nevermind", "not", "that", "one", "hold", "on"],
+    "CORRECTION_IGNORE_WORDS": ["one", "the", "that", "this", "a", "it", "it's", "its"],
+    "QUERY_STOPWORDS": ["mole", "moles", "one", "guy", "thing", "the", "a", "an", "with", "that", "this", "of", "on", "holding"],
+    "tiers": { "Perfect": 0.46, "Great": 0.30 },
+    "fallback_tiers": { "Perfect": 0.30, "Great": 0.18 }
+  },
+
+  "timing": {
+    "WINDUP_MS": 500,
+    "REGRET_WINDOW_MS": 300,
+    "RECOGNITION_GRACE_MS": 1500,
+    "MISS_SETTLE_MS": 2500,
+    "UTTERANCE_START_TOLERANCE_MS": 500,
+    "MUD_MS": 2000,
+    "BOMB_LOCKOUT_MS": 1000,
+    "SPAM_WINDOW_MS": 4000,
+    "SPAM_MAX_EVENTS": 3,
+    "SPAM_COOLDOWN_MS": 2000
+  },
+
+  "scoring": {
+    "base_points": {
+      "normal": 100, "twin": 150, "shapeshifter": 200, "riddle": 250,
+      "golden": 500, "bomb_defused": 300
+    },
+    "tier_multipliers": { "Perfect": 1.5, "Great": 1.2, "OK": 1.0 },
+    "golden_min_tier": "Great",
+    "sign_word_multiplier": 0.25,
+    "speed_bonus_max": 0.5,
+    "combo_step": 5,
+    "combo_cap": 4
+  },
+
+  "penalties": {
+    "missed_window_points": 50,
+    "misses_per_life": 3,
+    "wrong_mole_points": 100,
+    "regret_refund_fraction": 0.5
+  },
+
+  "actions": {
+    "whack": { "description": "whack hit smash bonk bop strike tap hammer get squash boop" },
+    "defuse": { "description": "defuse diffuse disarm cut wire snip" }
+  },
+
+  "moles": {
+    "chef":        { "family": "profession", "label": "Chef",        "visual": { "hat": "👨‍🍳", "prop": "🥄" }, "tags": ["food"],          "description": "chef cook kitchen food hat apron whisk spoon soup recipe restaurant" },
+    "baker":       { "family": "profession", "label": "Baker",       "visual": { "hat": "🧁", "prop": "🥖" }, "tags": ["food"],          "description": "baker bread cake oven flour bakery apron kitchen baguette pastry" },
+    "firefighter": { "family": "profession", "label": "Firefighter", "visual": { "hat": "🧑‍🚒", "prop": "🧯" }, "tags": ["fire", "water"], "description": "firefighter fire fighter fireman hose helmet truck rescue extinguisher siren station emergency" },
+    "pirate":      { "family": "profession", "label": "Pirate",      "visual": { "hat": "🏴‍☠️", "prop": "🦜" }, "tags": ["water"],         "description": "pirate captain ship parrot eyepatch treasure hook sword arr sailing buccaneer" },
+    "astronaut":   { "family": "profession", "label": "Astronaut",   "visual": { "hat": "🧑‍🚀", "prop": "🚀" }, "tags": ["space"],         "description": "astronaut spaceman space rocket helmet moon nasa cosmonaut orbit weightless" },
+    "wizard":      { "family": "profession", "label": "Wizard",      "visual": { "hat": "🧙", "prop": "🪄" }, "tags": ["magic"],         "description": "wizard magic wand spell sorcerer mage robe beard potion enchantment" },
+    "doctor":      { "family": "profession", "label": "Doctor",      "visual": { "hat": "🧑‍⚕️", "prop": "🩺" }, "tags": ["health"],        "description": "doctor medic nurse hospital drugs medicine stethoscope clinic patient" },
+    "farmer":      { "family": "profession", "label": "Farmer",      "visual": { "hat": "🧑‍🌾", "prop": "🌽" }, "tags": ["food", "nature"], "description": "farmer farm tractor corn straw cow barn crops field harvest" },
+    "knight":      { "family": "profession", "label": "Knight",      "visual": { "hat": "🛡️", "prop": "⚔️" }, "tags": ["fire"],          "description": "knight armor shield sword castle medieval lance sir joust brave" },
+
+    "happy":     { "family": "mood", "label": "Happy",     "visual": { "face": "😄" }, "tags": [],       "description": "happy smiling smile joyful cheerful glad grinning beaming delighted" },
+    "excited":   { "family": "mood", "label": "Excited",   "visual": { "face": "🤩" }, "tags": [],       "description": "excited thrilled starry eyes smiling cheerful hyped wow energetic eager" },
+    "sad":       { "family": "mood", "label": "Sad",       "visual": { "face": "😢" }, "tags": ["water"], "description": "sad crying tears unhappy upset blue weeping sorrow gloomy frown" },
+    "angry":     { "family": "mood", "label": "Angry",     "visual": { "face": "😠" }, "tags": ["fire"],  "description": "angry mad furious grumpy frowning cross annoyed rage scowl irritated" },
+    "sleepy":    { "family": "mood", "label": "Sleepy",    "visual": { "face": "😴" }, "tags": [],       "description": "sleepy tired sleeping yawning snoring drowsy asleep zzz exhausted bedtime" },
+    "scared":    { "family": "mood", "label": "Scared",    "visual": { "face": "😱" }, "tags": [],       "description": "scared afraid frightened terrified screaming fear spooked nervous trembling panic" },
+    "surprised": { "family": "mood", "label": "Surprised", "visual": { "face": "😮" }, "tags": [],       "description": "surprised shocked amazed astonished gasp startled stunned speechless unexpected awe" },
+
+    "banana":   { "family": "object", "label": "Banana",   "visual": { "prop": "🍌" }, "tags": ["food"],           "description": "banana fruit yellow peel bunch bananas slip smoothie tropical ripe" },
+    "guitar":   { "family": "object", "label": "Guitar",   "visual": { "prop": "🎸" }, "tags": ["music"],          "description": "guitar music rock strings guitarist band musician instrument melody strum" },
+    "umbrella": { "family": "object", "label": "Umbrella", "visual": { "prop": "☂️" }, "tags": ["water"],          "description": "umbrella rain brolly parasol wet weather raincoat drizzle canopy handle" },
+    "book":     { "family": "object", "label": "Book",     "visual": { "prop": "📕" }, "tags": [],                 "description": "book reading reader novel library pages bookworm story chapter paperback" },
+    "trophy":   { "family": "object", "label": "Trophy",   "visual": { "prop": "🏆" }, "tags": [],                 "description": "trophy cup winner champion prize gold award victory medal contest" },
+    "fish":     { "family": "object", "label": "Fish",     "visual": { "prop": "🐟" }, "tags": ["water", "food"],  "description": "fish fishing fisherman salmon tuna ocean catch underwater fin gills aquarium" },
+
+    "sign_ocean":   { "family": "sign", "label": "OCEAN",   "sign_word": "ocean",   "tags": ["water"],  "description": "ocean sea water wave waves beach tide salty surf coastline" },
+    "sign_volcano": { "family": "sign", "label": "VOLCANO", "sign_word": "volcano", "tags": ["fire"],   "description": "volcano lava magma eruption erupt mountain hot ash crater molten" },
+    "sign_galaxy":  { "family": "sign", "label": "GALAXY",  "sign_word": "galaxy",  "tags": ["space"],  "description": "galaxy universe stars planets milky way cosmos nebula constellation asteroid" },
+    "sign_pizza":   { "family": "sign", "label": "PIZZA",   "sign_word": "pizza",   "tags": ["food"],   "description": "pizza cheese pepperoni slice italian dough tomato crust topping pizzeria" },
+    "sign_winter":  { "family": "sign", "label": "WINTER",  "sign_word": "winter",  "tags": ["water"],  "description": "winter snow cold ice frozen snowman christmas freezing frost blizzard" },
+    "sign_jungle":  { "family": "sign", "label": "JUNGLE",  "sign_word": "jungle",  "tags": ["nature"], "description": "jungle rainforest tiger vines tropical trees monkey wild canopy forest" },
+
+    "riddle_piano":  { "family": "riddle", "label": "?", "clue": "I have keys but open no locks.",        "answer": "piano",  "tags": ["music"],  "description": "piano keyboard keys pianist grand melody ivory chords instrument notes" },
+    "riddle_clock":  { "family": "riddle", "label": "?", "clue": "I have hands but cannot clap.",         "answer": "clock",  "tags": [],         "description": "clock watch time hands ticking tick tock alarm minutes hour face" },
+    "riddle_egg":    { "family": "riddle", "label": "?", "clue": "You must break me before you use me.",  "answer": "egg",    "tags": ["food"],   "description": "egg eggs yolk shell omelette chicken breakfast hatch crack scrambled" },
+    "riddle_shadow": { "family": "riddle", "label": "?", "clue": "I follow you everywhere in the sun.",   "answer": "shadow", "tags": [],         "description": "shadow shade silhouette dark outline follower shape behind sunlight cast" },
+    "riddle_candle": { "family": "riddle", "label": "?", "clue": "I get shorter the longer I stay lit.",  "answer": "candle", "tags": ["fire"],   "description": "candle wax flame wick light birthday melting candlestick glowing paraffin" },
+    "riddle_sponge": { "family": "riddle", "label": "?", "clue": "I'm full of holes but still hold water.", "answer": "sponge", "tags": ["water"], "description": "sponge holes squishy soak absorb wash spongy dishes cleaning porous" },
+
+    "bomb": { "family": "bomb", "label": "Bomb", "visual": { "prop": "💣" }, "tags": ["fire"], "description": "bomb fuse explosive dynamite tnt boom wire detonator countdown blast" }
+  },
+
+  "twins": [["chef", "baker"], ["happy", "excited"]],
+
+  "shapeshifter_pool": ["chef", "pirate", "astronaut", "wizard", "doctor", "farmer", "knight", "firefighter",
+                        "banana", "guitar", "umbrella", "book", "trophy", "fish"],
+
+  "golden": { "extra_description": "", "window_factor": 0.6 },
+
+  "missions": [
+    { "text": "Whack anything WATER-related!", "tag": "water" },
+    { "text": "Whack only FOOD!",             "tag": "food" },
+    { "text": "Whack anything FIERY!",        "tag": "fire" },
+    { "text": "Whack SPACE things!",          "tag": "space" },
+    { "text": "Whack MUSIC makers!",          "tag": "music" }
+  ],
+
+  "levels": [
+    { "level": 1, "grid": 3, "duration_s": 60, "families": ["profession"],
+      "base_window_ms": 4500, "spawn_interval_ms": 2200, "max_visible": 2,
+      "bomb_chance": 0, "golden_chance": 0, "twin_chance": 0, "shapeshifter_chance": 0, "mission": false,
+      "target_score": 800 },
+    { "level": 2, "grid": 3, "duration_s": 80, "families": ["profession", "mood", "object"],
+      "base_window_ms": 5000, "spawn_interval_ms": 2400, "max_visible": 2,
+      "bomb_chance": 0.05, "golden_chance": 0.03, "twin_chance": 0, "shapeshifter_chance": 0, "mission": false,
+      "target_score": 1200 },
+    { "level": 3, "grid": 3, "duration_s": 75, "families": ["profession", "mood", "object", "sign"],
+      "base_window_ms": 3700, "spawn_interval_ms": 1900, "max_visible": 3,
+      "bomb_chance": 0.12, "golden_chance": 0.04, "twin_chance": 0.15, "shapeshifter_chance": 0, "mission": true,
+      "target_score": 2200 },
+    { "level": 4, "grid": 3, "duration_s": 80, "families": ["profession", "mood", "object", "sign"],
+      "base_window_ms": 3000, "spawn_interval_ms": 1500, "max_visible": 4,
+      "bomb_chance": 0.15, "golden_chance": 0.05, "twin_chance": 0.15, "shapeshifter_chance": 0.15, "mission": true,
+      "target_score": 3000 },
+    { "level": 5, "grid": 4, "duration_s": 90, "families": ["profession", "mood", "object", "sign", "riddle"],
+      "base_window_ms": 2800, "spawn_interval_ms": 1300, "max_visible": 5,
+      "bomb_chance": 0.15, "golden_chance": 0.12, "twin_chance": 0.15, "shapeshifter_chance": 0.15, "mission": true,
+      "target_score": 4000 }
+  ],
+
+  "calibration_phrases": [
+    ["whack the cook", "chef"],
+    ["hit the chef", "chef"],
+    ["smash the baker", "baker"],
+    ["get the bread one", "baker"],
+    ["whack the fireman", "firefighter"],
+    ["hit the pirate", "pirate"],
+    ["bonk the one with the parrot", "pirate"],
+    ["whack the spaceman", "astronaut"],
+    ["hit the wizard", "wizard"],
+    ["smash the magic one", "wizard"],
+    ["whack the doctor", "doctor"],
+    ["hit the farmer", "farmer"],
+    ["whack the knight", "knight"],
+    ["hit the happy one", "happy"],
+    ["whack the crying mole", "sad"],
+    ["smash the angry guy", "angry"],
+    ["hit the sleepy one", "sleepy"],
+    ["whack the scared mole", "scared"],
+    ["hit the shocked one", "surprised"],
+    ["whack the banana", "banana"],
+    ["hit the guitar", "guitar"],
+    ["smash the umbrella", "umbrella"],
+    ["whack the book", "book"],
+    ["hit the trophy", "trophy"],
+    ["whack the fish", "fish"],
+    ["hit the sea", "sign_ocean"],
+    ["whack the lava", "sign_volcano"],
+    ["hit the stars", "sign_galaxy"],
+    ["whack the cheese", "sign_pizza"],
+    ["hit the snow", "sign_winter"],
+    ["whack the piano", "riddle_piano"],
+    ["hit the clock", "riddle_clock"],
+    ["defuse the bomb", "bomb"],
+    ["cut the wire", "bomb"],
+    ["whack the chef with the whisk", "chef"],
+    ["hit the pirate with the parrot", "pirate"],
+    ["bonk the fireman with the hose", "firefighter"],
+    ["hit the yellow fruit", "banana"],
+    ["smash the knight with the shield", "knight"],
+    ["whack the wizard with the wand", "wizard"]
+  ]
+}
