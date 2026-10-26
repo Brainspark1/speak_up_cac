@@ -1,0 +1,143 @@
+{
+  "commands": {
+    "stop": {
+      "description": "Stop or cancel the current automation",
+      "phrases": [
+        "stop",
+        "cancel",
+        "stop automation",
+        "cancel command",
+        "stop browsing",
+        "halt"
+      ],
+      "action": "stop"
+    },
+    "scroll_down": {
+      "description": "Scroll down one page",
+      "phrases": [
+        "scroll down",
+        "scroll down one page",
+        "scroll down a page",
+        "move down the page"
+      ],
+      "action": "scroll",
+      "direction": "down",
+      "amount": "page"
+    },
+    "scroll_down_small": {
+      "action": "scroll",
+      "direction": "down",
+      "amount": "small",
+      "phrases": [
+        "scroll down a little",
+        "scroll down slightly",
+        "scroll down a bit"
+      ]
+    },
+    "scroll_up_small": {
+      "description": "Scroll up a little",
+      "action": "scroll",
+      "direction": "up",
+      "amount": "small",
+      "phrases": ["scroll up a little", "scroll up slightly", "scroll up a bit"]
+    },
+    "click_link": {
+      "description": "Click or open a link by its visible name",
+      "phrases": ["click", "click on", "click the", "open", "go to"],
+      "action": "click_link"
+    },
+    "zoom_in": {
+      "description": "Zoom in on the webpage",
+      "phrases": [
+        "zoom in",
+        "zoom in more",
+        "increase zoom",
+        "make the page bigger",
+        "enlarge the page"
+      ],
+      "action": "zoom",
+      "direction": "in"
+    },
+    "zoom_out": {
+      "description": "Zoom out on the webpage",
+      "phrases": [
+        "zoom out",
+        "zoom out more",
+        "decrease zoom",
+        "make the page smaller",
+        "shrink the page"
+      ],
+      "action": "zoom",
+      "direction": "out"
+    },
+    "reset_zoom": {
+      "description": "Reset webpage zoom",
+      "phrases": ["reset zoom", "normal zoom", "default zoom", "zoom reset"],
+      "action": "zoom",
+      "direction": "reset"
+    }
+  },
+  "links": {
+    "step_1": {
+      "name": "Step 1",
+      "description": "The first step of the recipe",
+      "phrases": [
+        "step 1",
+        "step one",
+        "first step",
+        "the first step",
+        "recipe step one",
+        "begin the recipe"
+      ]
+    },
+    "step_2": {
+      "name": "Step 2",
+      "description": "The second step of the recipe",
+      "phrases": [
+        "step 2",
+        "step two",
+        "second step",
+        "the second step",
+        "recipe step two",
+        "next step"
+      ]
+    },
+    "step_3": {
+      "name": "Step 3",
+      "description": "The third step of the recipe",
+      "phrases": [
+        "step 3",
+        "step three",
+        "third step",
+        "the third step",
+        "recipe step three",
+        "final step"
+      ]
+    },
+    "lost": {
+      "name": "Lost",
+      "description": "Return to step 1",
+      "phrases": [
+        "return to step 1",
+        "lost",
+        "confused",
+        "the lost step",
+        "what to do"
+      ]
+    }
+  },
+  "constants": {
+    "scroll_distances": {
+      "small": 240,
+      "page": 650
+    },
+    "zoom": {
+      "zoom_levels": [0.5, 0.75, 0.9, 1.0, 1.1, 1.25, 1.5, 1.75, 2.0],
+      "default_zoom": 1.0
+    }
+  },
+  "similarity": {
+    "action_threshold": 0.12,
+    "link_threshold": 0.12
+  }
+}
