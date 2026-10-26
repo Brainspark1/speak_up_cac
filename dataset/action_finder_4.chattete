@@ -1,0 +1,991 @@
+%[action_intent]('training':4000)
+    [~[character?] ~[player?] | ~[player?] ~[character?]] ~[filler?] ~[can you] @[action] @[correction_connector] ~[filler?] @[action]
+
+~[player]
+    yo
+    hey
+    hi
+    hello
+    sup
+    what's up
+    ay
+    oi
+    yo yo
+    hiya
+    howdy
+    yo bro
+    hey man
+    listen
+    look
+    so
+    alright
+    ok so
+    anyway
+    psst
+    ahem
+    excuse me
+    ready
+    here we go
+    okay
+    
+~[filler]
+    uh
+    um
+    eh
+
+~[character]
+    Zelda
+    Kratos
+    Link
+    Mario
+    Luigi
+    Peach
+    Bowser
+    Sonic
+    Tails
+    Knuckles
+    Cloud
+    Sephiroth
+    Aerith
+    Tifa
+    Lara
+    Aiden
+    Ellie
+    Joel
+    Nathan
+    Nate
+    Master Chief
+    Samus
+    Geralt
+    Ciri
+    Yennefer
+    Aloy
+    Kassandra
+    Alexios
+    Ezio
+    Altair
+    Connor
+    Arthur
+    Marston
+    John
+    Trevor
+    Michael
+    Niko
+    CJ
+    Chief
+    Gordon
+    Freeman
+    Doom Guy
+    Isaac
+    Leon
+    Chris
+    Jill
+    Claire
+    Ada
+    Nero
+    Dante
+    Vergil
+    Bayonetta
+    Ryu
+    Ken
+    Chun-Li
+    Scorpion
+    Sub-Zero
+    Raiden
+    Kitana
+    Jax
+    Steve
+    Alex
+    Herobrine
+    Notch
+    Kirby
+    Pikachu
+    Ash
+    Red
+    Blue
+    Finn
+    Jake
+    Rick
+    Morty
+    Shadow
+    Silver
+    Amy
+    Cortana
+    Marcus
+    Dom
+    Nathan Drake
+    Bob
+    Alice
+    Jack
+    Jane
+    Max
+    Sam
+    Jax_2020
+    xX_Slayer_Xx
+    ShadowWolf99
+    DarkKnight
+    NoobMaster
+    ProGamer
+    Blaze
+    Ash_the_Brave
+    Kai
+    Rex
+    Nova
+    Echo
+    Raven
+    Storm
+    Phoenix
+    Ghost
+    Viper
+    Falcon
+    Titan
+    Frost
+    Blitz
+    Onyx
+    Sable
+    Vex
+    Zane
+    Kade
+    Talon
+    Jett
+    
+~[can you]
+    can you ~[filler?]
+    could you ~[filler?]
+    would you ~[filler?]
+    will you ~[filler?]
+    can u ~[filler?]
+    could u ~[filler?]
+    would u ~[filler?]
+    will u ~[filler?]
+    please ~[filler?]
+    pls ~[filler?]
+    plz ~[filler?]
+    do you mind ~[filler?]
+    would you mind ~[filler?]
+    mind if you ~[filler?]
+    can you please ~[filler?]
+    could you please ~[filler?]
+    would you please ~[filler?]
+    can you go ahead and ~[filler?]
+    go ahead and ~[filler?]
+    try to ~[filler?]
+    make sure to ~[filler?]
+    i need you to ~[filler?]
+    i'd like you to ~[filler?]
+    you should ~[filler?]
+    you gotta ~[filler?]
+    you need to ~[filler?]
+    could you just ~[filler?]
+    just ~[filler?]
+    help me ~[filler?]
+    do me a favor and ~[filler?]
+
+~[direction]
+    left
+    right
+    up
+    down
+    forward 
+    back
+@[action]
+    step ~[direction]
+    move ~[direction]
+    run ~[direction]
+    jump
+    jump ~[direction]
+    duck
+    throw
+    dash
+    dash ~[direction]
+    use
+    roll
+    roll ~[direction]
+    attack
+    freeze
+    press
+    shoot
+    charge
+    climb
+    climb ~[direction]
+    fire
+    defend
+    break
+    smash
+    stab
+    leap
+    grab
+    interact
+    take
+    retrieve
+    stop
+    fly
+    spin
+    spam
+    mash
+    collect
+    turn
+    cast
+    hit
+    punch
+    kick
+    combo
+    dodge
+    dig
+    swap
+    strike
+    bounce
+    open
+    unlock
+    select
+    sprint
+    sprint ~[direction]
+    walk
+    walk ~[direction]
+    crouch
+    crawl
+    sneak
+    tiptoe
+    slide
+    strafe
+    backpedal
+    sidestep
+    hop
+    vault
+    mantle
+    double jump
+    air dash
+    teleport
+    blink
+    tumble
+    backflip
+    front flip
+    somersault
+    slow down
+    speed up
+    wall climb
+    ledge grab
+    hang
+    drop down
+    fall back
+    ascend
+    descend
+    hover
+    glide
+    swim
+    dive
+    surface
+    tread water
+    drift
+    boost
+    brake
+    reverse
+    u-turn
+    melee
+    parry
+    block
+    guard
+    counter
+    riposte
+    feint
+    lunge
+    thrust
+    slash
+    swing
+    uppercut
+    jab
+    cross
+    hook
+    headbutt
+    tackle
+    shove
+    push
+    pull
+    aim
+    snipe
+    reload
+    holster
+    unholster
+    switch weapon
+    draw weapon
+    sheathe weapon
+    charge attack
+    heavy attack
+    light attack
+    special attack
+    finishing move
+    execute
+    backstab
+    sneak attack
+    critical hit
+    chain attack
+    launch
+    juggle
+    knock down
+    knock back
+    stun
+    disarm
+    headshot
+    quickscope
+    no-scope
+    spray
+    burst fire
+    single fire
+    cover fire
+    suppress
+    flank
+    ambush
+    retreat
+    hold position
+    advance
+    charge in
+    rush
+    camp
+    snipe from range
+    cast spell
+    summon
+    conjure
+    channel
+    enchant
+    curse
+    hex
+    heal
+    revive
+    resurrect
+    buff
+    debuff
+    shield
+    barrier
+    blink strike
+    phase
+    invisibility
+    stealth
+    cloak
+    decloak
+    transform
+    shapeshift
+    morph
+    power up
+    level up
+    activate ability
+    use skill
+    use ultimate
+    pop ultimate
+    ability one
+    ability two
+    ultimate ability
+    passive ability
+    trigger trap
+    disarm trap
+    set trap
+    plant bomb
+    defuse bomb
+    detonate
+    ignite
+    freeze enemy
+    shock
+    electrocute
+    poison
+    drain
+    leech
+    absorb
+    reflect
+    deflect
+    pick up
+    drop
+    equip
+    unequip
+    swap weapon
+    inventory
+    open inventory
+    craft
+    forge
+    upgrade
+    repair
+    salvage
+    loot
+    search
+    examine
+    inspect
+    read
+    use item
+    consume
+    eat
+    drink
+    apply
+    throw item
+    place
+    plant
+    build
+    construct
+    demolish
+    destroy
+    unlock door
+    lock door
+    open chest
+    open door
+    close door
+    push button
+    pull lever
+    flip switch
+    activate
+    deactivate
+    power on
+    power off
+    turn on
+    turn off
+    pick lock
+    hack
+    hotwire
+    disable
+    enable
+    mount
+    dismount
+    ride
+    tame
+    feed
+    pet
+    hide
+    crouch walk
+    peek
+    listen
+    eavesdrop
+    distract
+    lure
+    whistle
+    throw rock
+    knockout
+    choke out
+    silent takedown
+    hide body
+    blend in
+    disguise
+    rappel
+    zipline
+    grapple
+    grapple hook
+    swing across
+    balance
+    walk
+    push 
+    break 
+    smash 
+    kick 
+    open 
+    cross bridge
+    jump gap
+    wall run
+    slide under
+    duck under
+    crawl through
+    squeeze through
+    pause
+    resume
+    save game
+    load game
+    quick save
+    quick load
+    respawn
+    restart
+    retry
+    continue
+    exit
+    quit
+    back out
+    confirm
+    cancel
+    select option
+    navigate menu
+    toggle map
+    open map
+    close map
+    check 
+    open 
+    skip cutscene
+    fast travel
+    ping
+    mark target
+    call out
+    request backup
+    revive 
+    trade
+    gift
+    spectate
+    taunt
+    emote
+    dance
+    wave
+    salute
+    surrender
+    forfeit
+    ready up
+    vote kick
+    mute
+    report
+
+    
+    
+
+
+@[target]
+    coin
+    power up
+    enemy
+    first guy
+    monster
+    boss
+    turtle
+    spider
+    door
+    wall
+    block
+    gap
+    hole
+    flag
+    pipe
+    barrel
+    box
+    tree
+    water
+    fish
+    goblin
+    slime
+    ledge
+    bat
+    zombie
+    dragon
+    robot
+    ball
+    item
+    dog
+    cat
+    monkey
+    princess
+    bandit
+    obstacle
+    spikes
+    platform
+    pillar
+    chest
+    bad guy
+    mini-boss
+    final boss
+    villain
+    creature
+    beast
+    mob
+    minion
+    grunt
+    guard
+    soldier
+    knight
+    archer
+    mage
+    wizard
+    sorcerer
+    witch
+    ninja
+    samurai
+    pirate
+    thief
+    rogue
+    thug
+    gangster
+    criminal
+    sniper
+    gunner
+    brute
+    ogre
+    troll
+    giant
+    golem
+    elemental
+    demon
+    devil
+    imp
+    ghost
+    ghoul
+    wraith
+    specter
+    phantom
+    skeleton
+    mummy
+    vampire
+    werewolf
+    lycan
+    orc
+    kobold
+    gremlin
+    gnome
+    dwarf
+    elf
+    fairy
+    pixie
+    angel
+    dragonling
+    hydra
+    chimera
+    griffin
+    phoenix
+    kraken
+    serpent
+    snake
+    cobra
+    viper
+    tarantula
+    scorpion
+    ooze
+    blob
+    jelly
+    android
+    cyborg
+    drone
+    mech
+    turret
+    sentry
+    AI
+    boss monster
+    alien
+    mutant
+    clone
+    doppelganger
+    shadow
+    nightmare
+    wraithlord
+    cultist
+    priest
+    shaman
+    shark
+    whale
+    dolphin
+    crab
+    lobster
+    jellyfish
+    frog
+    toad
+    lizard
+    gecko
+    chameleon
+    wolf
+    tiger
+    lion
+    panther
+    gorilla
+    ape
+    bear
+    boar
+    rat
+    mouse
+    rabbit
+    bird
+    eagle
+    hawk
+    owl
+    crow
+    raven
+    chicken
+    pig
+    cow
+    horse
+    deer
+    elk
+    moose
+    fox
+    raccoon
+    squirrel
+    bee
+    wasp
+    hornet
+    fly
+    mosquito
+    butterfly
+    ant
+    beetle
+    worm
+    snail
+    slug
+    octopus
+    squid
+    penguin
+    seal
+    walrus
+    camel
+    elephant
+    rhino
+    hippo
+    crocodile
+    alligator
+    dinosaur
+    raptor
+    prince
+    king
+    queen
+    hero
+    ally
+    teammate
+    companion
+    merchant
+    vendor
+    shopkeeper
+    blacksmith
+    healer
+    villager
+    townsperson
+    civilian
+    hostage
+    prisoner
+    captive
+    farmer
+    fisherman
+    guide
+    elder
+    chief
+    leader
+    commander
+    general
+    scientist
+    engineer
+    medic
+    mechanic
+    driver
+    pilot
+    gem
+    jewel
+    diamond
+    ruby
+    emerald
+    sapphire
+    gold
+    treasure
+    loot
+    power-up
+    powerup
+    artifact
+    relic
+    key
+    keycard
+    potion
+    elixir
+    scroll
+    book
+    tome
+    map
+    compass
+    torch
+    lantern
+    candle
+    crystal
+    orb
+    shard
+    rune
+    medallion
+    amulet
+    ring
+    crown
+    staff
+    wand
+    sword
+    dagger
+    axe
+    hammer
+    spear
+    bow
+    arrow
+    shield
+    armor
+    helmet
+    gauntlet
+    boots
+    cloak
+    cape
+    banner
+    trophy
+    star
+    heart
+    health pack
+    ammo
+    ammo box
+    grenade
+    mine
+    explosive
+    fuel
+    battery
+    energy cell
+    core
+    chip
+    disk
+    cassette
+    letter
+    note
+    journal
+    ticket
+    coin pouch
+    sack
+    bag
+    gate
+    pit
+    chasm
+    cliff
+    column
+    crate
+    container
+    bush
+    plant
+    flower
+    rock
+    boulder
+    stone
+    lake
+    river
+    pond
+    ocean
+    sea
+    waterfall
+    lava
+    fire
+    ice
+    snow
+    mud
+    sand
+    trap
+    hazard
+    mine field
+    bridge
+    ladder
+    rope
+    vine
+    chain
+    lever
+    switch
+    button
+    dial
+    gear
+    valve
+    fan
+    conveyor belt
+    elevator
+    staircase
+    stairs
+    ramp
+    slope
+    tunnel
+    cave
+    cavern
+    mine shaft
+    shaft
+    vault
+    safe
+    locker
+    cabinet
+    drawer
+    shelf
+    table
+    chair
+    bed
+    window
+    roof
+    floor
+    ceiling
+    statue
+    monument
+    altar
+    shrine
+    portal
+    teleporter
+    checkpoint
+    save point
+    spawn point
+    campfire
+    tent
+    house
+    hut
+    cabin
+    castle
+    tower
+    fortress
+    dungeon
+    temple
+    ruins
+    village
+    town
+    city
+    car
+    truck
+    tank
+    jeep
+    motorcycle
+    bike
+    boat
+    ship
+    submarine
+    plane
+    jet
+    helicopter
+    spaceship
+    rocket
+    UFO
+    cart
+    wagon
+    sled
+    hoverboard
+    mech suit
+    exosuit
+    bomb
+    missile
+    laser
+    beam
+    bullet
+    shell
+    dart
+    shuriken
+    boomerang
+    fireball
+    iceball
+    lightning bolt
+    explosion
+    blast
+    shockwave
+    cloud
+    smoke
+    gas
+    poison cloud
+    forcefield
+    barrier
+    guy on the left 
+
+
+@[correction_connector]
+    wait no
+    no wait
+    I mean
+    i meant
+    scratch that
+    actually
+    sorry
+    my bad
+    oops
+    not that
+    nope
+    undo that
+    cancel that
+    never mind
+    nevermind
+    ignore that
+    one sec
+    hold on
+    uh no
+    er no
+    hang on
+    that's wrong
+    wrong one
+    not that one
+    switch that
+    fix that
+
+
+~[preposition]
+    on 
+    over the 
+    the 
+    that 
+    this

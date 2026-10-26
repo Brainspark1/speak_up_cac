@@ -1,0 +1,205 @@
+{
+  "characters": {
+    "absolute_page_number": "0x00A0",
+    "vertical_screen_position": "0x05B1",
+    "horizontal_position": "0x0585",
+    "dies_state": "0x0592",
+    "character_state": "0x0560"
+  },
+  "targets": {
+    "waddle_dee": {
+      "address": "0x01",
+      "description": "Small, round red creature with a pale face, big eyes, and orange feet that walks peacefully - waddle dee",
+      "tracking": {
+        "track_distance": 30,
+        "action": "inhale"
+      }
+    },
+    "waddle_doo": {
+      "address": "0x02",
+      "description": "Round red creature with a single giant eye and two small spikes that fires beam attacks - waddle doo",
+      "tracking": {
+        "track_distance": 25,
+        "action": "inhale"
+      }
+    },
+    "bronto_burt": {
+      "address": "0x03",
+      "description": "Pink, spherical winged creature with small feet that flies in swooping or hovering patterns - bronto burt",
+      "tracking": {
+        "track_distance": 25,
+        "action": "inhale"
+      }
+    },
+    "hot_head": {
+      "address": "0x04",
+      "description": "Flaming red creature that shoots small fireballs or breathes continuous fire - hot head",
+      "tracking": {
+        "track_distance": 22,
+        "action": "inhale"
+      }
+    },
+    "sparky": {
+      "address": "0x05",
+      "description": "Small, blue, oval creature with a lightbulb-like top that emits electrical charges - sparky",
+      "tracking": {
+        "track_distance": 22,
+        "action": "inhale"
+      }
+    },
+    "poppy_bros_jr": {
+      "address": "0x06",
+      "description": "Small creature wearing a blue pointed hat that hops around and tosses bombs - poppy bros jr",
+      "tracking": {
+        "track_distance": 22,
+        "action": "inhale"
+      }
+    },
+    "sir_kibble": {
+      "address": "0x07",
+      "description": "Creature encased in yellow armor wearing a cutter helmet that throws boomerang blades - sir kibble",
+      "tracking": {
+        "track_distance": 25,
+        "action": "inhale"
+      }
+    },
+    "maxim_tomato": {
+      "address": "0x10",
+      "object_id": "0x01",
+      "description": "Bright red tomato item marked with a prominent letter M that restores full health - maxim tomato",
+      "tracking": {
+        "track_distance": 22,
+        "action": "step right"
+      }
+    },
+    "candy_powerup": {
+      "address": "0x11",
+      "object_id": "0x02",
+      "description": "Wrapped striped candy item that grants temporary invincibility - candy powerup",
+      "tracking": {
+        "track_distance": 22,
+        "action": "step right"
+      }
+    },
+    "enemy": {
+      "active_state": "0x06C0",
+      "enemy_type": "0x0600",
+      "horizontal_velocity": "0x0660",
+      "absolute_map_num": "0x00A1",
+      "horizontal_page_position": "0x0618",
+      "enemy_vertical_screen_position": "0x0648"
+    }
+  },
+  "items": {
+    "object_sprites": {
+      "active_state": "0x06C1",
+      "x_screen": "0x0619",
+      "y_position": "0x0649",
+      "object_type": "0x0601",
+      "slot_count": 1
+    }
+  },
+  "actions": {
+    "jump": {
+      "description": "jump hop leap bounce rise up",
+      "button_array": ["A"],
+      "duration_array": [20],
+      "succession": "False"
+    },
+    "float": {
+      "description": "fly float puff up air ascend flap",
+      "button_array": ["up"],
+      "duration_array": [50],
+      "succession": "False"
+    },
+    "inhale": {
+      "description": "suck swallow inhale eat absorb vacuum breath",
+      "button_array": ["B"],
+      "duration_array": [40],
+      "succession": "False"
+    },
+    "use_ability": {
+      "description": "attack use copy power fire shoot strike blast",
+      "button_array": ["B"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "spit": {
+      "description": "spit out shoot star expel exhale blast",
+      "button_array": ["B"],
+      "duration_array": [10],
+      "succession": "False"
+    },
+    "slide": {
+      "description": "slide kick low attack sweep ground dash",
+      "button_array": ["down", "A"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "crouch": {
+      "description": "duck crouch squat drop lower down ingest digest",
+      "button_array": ["down"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "move left": {
+      "description": "move left backwards go left back retreat",
+      "button_array": ["left"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "step left": {
+      "description": "move left a little take a small step backwards step back",
+      "button_array": ["left"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "step right": {
+      "description": "move right a little take a small step forward step ahead",
+      "button_array": ["right"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "move right": {
+      "description": "move right forwards go right advance proceed",
+      "button_array": ["right"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "run left": {
+      "description": "run left sprint left dash fast",
+      "button_array": ["left", "left"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "run right": {
+      "description": "run right sprint right dash fast",
+      "button_array": ["right", "right"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "hold left": {
+      "description": "hold left go back keep sustained maintain constant",
+      "button_array": ["left"],
+      "duration_array": [null],
+      "succession": "False"
+    },
+    "hold right": {
+      "description": "hold right go forward keep sustained maintain constant",
+      "button_array": ["right"],
+      "duration_array": [null],
+      "succession": "False"
+    },
+    "stop": {
+      "description": "stop cease halt end quit finish cancel pause done",
+      "button_array": [""],
+      "duration_array": [null],
+      "succession": "False"
+    }
+  },
+  "environment": {
+    "time_hundred": "0x05D8",
+    "time_ten": "0x05D9",
+    "time_one": "0x05DA"
+  }
+}

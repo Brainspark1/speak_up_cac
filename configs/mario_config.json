@@ -1,0 +1,258 @@
+{
+  "characters": {
+    "absolute_page_number": "0x006D",
+    "vertical_screen_position": "0x00CE",
+    "horizontal_position": "0x0086",
+    "dies_state": "0x000E",
+    "character_state": "0x06"
+  },
+  "targets": {
+    "goomba": {
+      "address": "0x06",
+      "description": "Short, ground-dwelling brown creature with a scowling face and triangular white eyes - goomba",
+      "tracking": {
+          "track_distance": 53,
+          "action": "jump"
+      }
+    },
+    "red_koopa": {
+      "address": "0x01",
+      "description": "Bipedal yellow turtle with a prominent red shell, large head, and oval eyes - red koopa",
+      "tracking": {
+        "track_distance": 22,
+        "action": "jump"
+      }
+    },
+    "buzzy_beetle": {
+      "address": "0x02",
+      "description": "Short, ground-dwelling black-skinned creature encased in a smooth, domed blue shell - buzzy beetle",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "red_koopa_paratroopa": {
+      "address": "0x03",
+      "description": "Bipedal yellow turtle with a red shell, large oval eyes, and a pair of white fluttering wings - red koopa paratroopa",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "green_koopa_paratroopa": {
+      "address": "0x04",
+      "description": "Bipedal yellow turtle with a green shell, large oval eyes, and a pair of white fluttering wings - green koopa paratroopa",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "piranha_plant": {
+      "address": "0x0D",
+      "description": "Stationary green botanical enemy with a wide, toothy maw, emerging upward - piranha plant",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "green_koopa": {
+      "address": "0x00",
+      "description": "Bipedal yellow turtle with a prominent green shell, large head, and oval eyes - koopa green koopa",
+      "tracking": {
+          "track_distance": 45,
+          "action": "jump"
+      }
+    },
+    "hammer_bro": {
+      "address": "0x09",
+      "description": "Aggressive, standing bipedal turtle wearing a white and blue helmet, actively throwing projectiles - hammer bro",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "lakitu": {
+      "address": "0x0E",
+      "description": "Bespectacled, green-faced creature hovering inside a smiling, white puffy cloud - lakitu",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "spiny": {
+      "address": "0x0F",
+      "description": "Small, quadrupedal red creature covered in sharp, prominent white spikes across its back - spiny",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "bowser": {
+      "address": "0x2D",
+      "description": "Large, green, reptilian boss with a spiked shell, orange hair, and a roaring fire-breathing mouth - bowser",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "mushroom_powerup": {
+      "address": "0x2C",
+      "object_id": "0x00",
+      "description": "Consumable item with a short white stalk and a bright orange-red cap adorned with white spots - mushroom powerup",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "fire_flower_powerup": {
+      "address": "0x2E",
+      "object_id": "0x01",
+      "description": "Stationary flower with a central face, surrounded by alternating blinking petals of white, orange, and red - fire flower powerup",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "star_powerup": {
+      "address": "0x2F",
+      "object_id": "0x02",
+      "description": "Dynamic, five-pointed star icon with eyes, continuously blinking between yellow and orange hues - start powerup",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "one_up_powerup": {
+      "address": "0x30",
+      "object_id": "0x03",
+      "description": "Consumable item with a short white stalk and a distinct bright green cap adorned with white spots - one up powerup",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "coin": {
+      "address": "0x0030",
+      "object_id": "0x0C",
+      "description": "Small, gleaming gold oval or circular currency item with a distinctive inner marking - coin",
+      "tracking": {
+          "track_distance": 22,
+          "action": "jump"
+      }
+    },
+    "enemy": {
+      "active_state": "0x000F",
+      "enemy_type": "0x0016",
+      "horizontal_velocity": "0x0058",
+      "absolute_map_num": "0x006E",
+      "horizontal_page_position": "0x0087",
+      "enemy_vertical_screen_position": "0x00CF"
+    }
+  },
+  "items": {
+    "object_sprites": {
+      "active_state": "0x0014",
+      "x_screen": "0x008C",
+      "y_position": "0x00D4",
+      "object_type": "0x0039",
+      "slot_count": 1
+    }
+  },
+  "actions": {
+    "jump": {
+      "description": "jump hop leap bounce spring vault rise up",
+      "button_array": ["A"],
+      "duration_array": [25],
+      "succession": "False"
+    },
+    "run": {
+      "description": "run sprint dash go fast hurry",
+      "button_array": ["B"],
+      "duration_array": [20],
+      "succession": "True"
+    },
+    "move left": {
+      "description": "move left backwards go left back retreat",
+      "button_array": ["left"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "step left": {
+      "description": "move left a little take a small step backwards step back",
+      "button_array": ["left"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "step right": {
+      "description": "move right a little take a small step forward step ahead",
+      "button_array": ["right"],
+      "duration_array": [15],
+      "succession": "False"
+    },
+    "further": {
+      "description": "further",
+      "button_array": ["right", "A"],
+      "duration_array": [26, 25],
+      "succession": "False"
+    },
+    "move right": {
+      "description": "move right forwards go right advance proceed",
+      "button_array": ["right"],
+      "duration_array": [35],
+      "succession": "False"
+    },
+    "track": {
+      "description": "going to an enemy's location follow chase pursue target",
+      "button_array": ["E"],
+      "duration_array": [null],
+      "succession": "False"
+    },
+    "fireball": {
+      "description": "shoot a pellet of fire throw fireball",
+      "button_array": ["F"],
+      "duration_array": [5],
+      "succession": "False"
+    },
+    "duck": {
+      "description": "duck or crouch down or get into a pipe",
+      "button_array": ["S"],
+      "duration_array": [10],
+      "succession": "False"
+    },
+    "run left": {
+        "description": "run left sprint left dash fast",
+        "button_array": ["left"],
+        "duration_array": [null],
+        "succession": "False"
+    },
+    "run right": {
+        "description": "run right sprint right dash fast",
+        "button_array": ["right"],
+        "duration_array": [null],
+        "succession": "False"
+    },
+    "hold left": {
+      "description": "hold left go back keep sustained maintain constant",
+      "button_array": ["left"],
+      "duration_array": [null],
+      "succession": "False"
+    },
+    "hold right": {
+      "description": "hold right go forward keep sustained maintain constant",
+      "button_array": ["right"],
+      "duration_array": [null],
+      "succession": "False"
+    },
+    "stop": {
+      "description": "stop cease halt end quit finish cancel pause done",
+      "button_array": [""],
+      "duration_array": [null],
+      "succession": "False"
+    }
+  },
+  "environment": {
+    "time_hundred": "0x07F8",
+    "time_ten": "0x07F9",
+    "time_one": "0x07FA"
+  }
+}
