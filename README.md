@@ -1,0 +1,2 @@
+### Note on AI usage in this branch: 
+The implementation of our product for this demonstration was largely programmed with the help of Google Gemini and StackOverflow, however the main underlying files at the base of the implementation, such as the files ```voice_listener.py``` and ```semantic_mapper.py``` are completely based on our own code and implementation of Super Mario Bros and Kirby's Adventure that can be found under the ```package``` branch of the repository.
